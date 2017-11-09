@@ -18,7 +18,8 @@ class Mess(QWidget):
         self.center()
 
         # buttonReply = QMessageBox.about(self, title, message, QMessageBox.Ok) # со знаком вопроса
-        buttonReply = QMessageBox.about(self, title, message)  # без иконки
+        # buttonReply = QMessageBox.about(self, title, message)  # без иконки
+        buttonReply = QMessageBox.information(self, title, message, QMessageBox.Ok) # со знаком вопроса
         if buttonReply == QMessageBox.Ok:
             print('Ok')
         self.show()
