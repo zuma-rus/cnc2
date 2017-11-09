@@ -1,17 +1,20 @@
+# Импорт необходимых библиотек (классов)
 import sys
 import configparser
 import os
-# Импортируем наш интерфейс из файла
+# Импортируем наш интерфейс и подключаем интерфейсные файлы
 from cnc_ui import *
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QFileDialog, QTableWidgetItem
+# интерфейсные файлы
 from my_tables import My_tables
+from messages import Mess
 from vik import Vik
 from afin import Afin
 from shield import Shield
 from paz import Paz
 from pazpr import PazPr
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QFileDialog, QTableWidgetItem
 
 
 # Основной класс для работы с интерфейсом
@@ -123,6 +126,8 @@ class MyWin(QtWidgets.QMainWindow):
         vik = Vik(name, self.tf, self.mf, ot_x, ot_y)
         vik.createProgs(list)
         self.statusBar().showMessage('Программы филёнок Виктории созданы!')
+        mes = Mess()
+        mes.MesProgComplete('Программы готовы', 'Программы филёнок Виктории созданы!')
 
     # запуск создания программ Афин
     def createAfines(self):
@@ -135,6 +140,8 @@ class MyWin(QtWidgets.QMainWindow):
         afin = Afin(name, self.tf, self.mf, ot_x, ot_y, pr)
         afin.createProgs(list)
         self.statusBar().showMessage('Программы филёнок Афин созданы!')
+        mes = Mess()
+        mes.MesProgComplete('Программы готовы', 'Программы филёнок Афин созданы!')
 
     # запуск создания программ Щитов
     def createShields(self):
@@ -147,6 +154,8 @@ class MyWin(QtWidgets.QMainWindow):
         shit = Shield(name, self.tf, self.mf, ot_x, ot_y, prfx)
         shit.createProgs(list)
         self.statusBar().showMessage('Программы Щитов созданы!')
+        mes = Mess()
+        mes.MesProgComplete('Программы готовы', 'Программы Щитов созданы!')
 
     # запуск создания программ Пазов для колонн
     def createPaz(self):
@@ -159,6 +168,8 @@ class MyWin(QtWidgets.QMainWindow):
         paz = Paz(name2, name3, self.tf, self.mf, prfx2, prfx3)
         paz.createProgs(list)
         self.statusBar().showMessage('Программы Пазов созданы!')
+        mes = Mess()
+        mes.MesProgComplete('Программы готовы', 'Программы Пазов созданы!')
 
     # запуск создания программ Прямых Пазов для колонн
     def createPazPr(self):
@@ -183,6 +194,8 @@ class MyWin(QtWidgets.QMainWindow):
 
         pazpr.createProgs(list)
         self.statusBar().showMessage('Программы Прямых Пазов созданы!')
+        mes = Mess()
+        mes.MesProgComplete('Программы готовы', 'Программы Прямых Пазов созданы!')
 
     # диалоговое окно, для выбора файла или папки
     def selectFileFolder(self, param, lineEdit):
