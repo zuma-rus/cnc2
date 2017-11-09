@@ -1,12 +1,13 @@
 from template import Template
 
+
 class Shield(Template):
     """спец класс для филёнок Виктории, наследуется от Template"""
 
     def __init__(self, name_template, path_to_template, path_to_progs, ot_x, ot_y, prfx):
         super().__init__(name_template, path_to_template, path_to_progs, ot_x, ot_y)
         self.subfolder = 'щиты\\'
-        self.maskNameProg = '[prfx][X][nul][Y].tap'
+        self.mask_name_prog = '[prfx][X][nul][Y].[ext]'
         self.prfx = prfx
 
     # основная программа, где вычисляются значения

@@ -1,12 +1,13 @@
 from template import Template
 
+
 class PazPr(Template):
     """спец класс для Пазов, наследуется от Template"""
 
     def __init__(self, name, path_to_template, path_to_progs,
                  prfx, ot_left, ot_right, pazov):
         super().__init__(name, path_to_template, path_to_progs, 42, 42)
-        self.maskNameProg = '[prfx][nul][Y][X].tap'
+        self.mask_name_prog = '[prfx][nul][Y][X].[ext]'
         self.prfx = prfx
         self.pazov = pazov
         self.ot_left = ot_left

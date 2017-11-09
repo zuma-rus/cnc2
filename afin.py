@@ -1,7 +1,7 @@
 from template import Template
 
 class Afin(Template):
-    """спец класс для филёнок Виктории, наследуется от Template"""
+    """спец класс для филёнок Афина, наследуется от Template"""
 
     def __init__(self, name_template, path_to_template, path_to_progs, ot_x, ot_y, pr):
         super().__init__(name_template, path_to_template, path_to_progs, ot_x, ot_y)

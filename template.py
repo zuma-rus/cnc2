@@ -1,6 +1,7 @@
 import os
 import re
 
+
 class Template(object):
 
     def __init__(self, name_template, path_to_template,
@@ -8,7 +9,8 @@ class Template(object):
         self.name = name_template
         self.path_to_template = self.correctPath(path_to_template)
         self.path_to_progs = self.correctPath(path_to_progs)
-        self.maskNameProg = '[X][prfx][nul][Y][pstfx].tap'
+        self.mask_name_prog = '[X][prfx][nul][Y][pstfx].[ext]'
+        self.file_extension_prog = 'tap'
 
         self.ot_x = int(ot_x)
         self.ot_y = int(ot_y)
@@ -45,12 +47,13 @@ class Template(object):
         prfx = self.prfx
         pstfx = self.pstfx
         nul = '0' if y < 100 else ''
-        name_prog = self.maskNameProg
+        name_prog = self.mask_name_prog
         name_prog = name_prog.replace('[X]', str(x))
         name_prog = name_prog.replace('[Y]', str(y))
         name_prog = name_prog.replace('[prfx]', str(prfx))
         name_prog = name_prog.replace('[pstfx]', str(pstfx))
         name_prog = name_prog.replace('[nul]', str(nul))
+        name_prog = name_prog.replace('[ext]', self.file_extension_prog)
         return name_prog
 
     def readTemplate(self, name):
