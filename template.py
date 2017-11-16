@@ -46,7 +46,13 @@ class Template(object):
     def createNameProg(self, x, y):
         prfx = self.prfx
         pstfx = self.pstfx
-        nul = '0' if y < 100 else ''
+
+        # условная корректировка для нуля (в связи с добавленим шаблонов под синтек)
+        if (y > 600):
+            nul = '0' if x < 100 else ''
+        else:
+            nul = '0' if y < 100 else ''
+
         name_prog = self.mask_name_prog
         name_prog = name_prog.replace('[X]', str(x))
         name_prog = name_prog.replace('[Y]', str(y))
