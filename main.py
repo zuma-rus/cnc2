@@ -439,7 +439,7 @@ def saveSession(ui):
 
 # секция для main файла
 if __name__ == "__main__":
-    versionApp = "2.1"
+    versionApp = "2.1.1"
     conf = configparser.RawConfigParser()
     conf.read("settings.ini")
     work = configparser.RawConfigParser()
