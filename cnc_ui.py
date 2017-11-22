@@ -7,10 +7,11 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from version import get_version_app as vers
 
 
 class Ui_MainWindow(object):
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(750, 550)
@@ -76,7 +77,7 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("background-color: rgb(255, 0, 4);\n"
-"color: rgb(255, 255, 127);")
+                                   "color: rgb(255, 255, 127);")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.groupBox_ots_vik = QtWidgets.QGroupBox(self.tab_vik)
@@ -136,7 +137,9 @@ class Ui_MainWindow(object):
         self.btn_create_vik.setFont(font)
         self.btn_create_vik.setToolTip("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("ico/Hydrattz-Multipurpose-Alphabet-Letter-V-orange.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(
+            "ico/Hydrattz-Multipurpose-Alphabet-Letter-V-orange.ico"),
+            QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_create_vik.setIcon(icon1)
         self.btn_create_vik.setIconSize(QtCore.QSize(32, 32))
         self.btn_create_vik.setAutoDefault(False)
@@ -171,7 +174,7 @@ class Ui_MainWindow(object):
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.label_3.setFont(font)
         self.label_3.setStyleSheet("background-color:rgb(255, 255, 127); \n"
-"color: rgb(255, 0, 4);")
+                                   "color: rgb(255, 0, 4);")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.tab_afin)
@@ -237,7 +240,8 @@ class Ui_MainWindow(object):
         self.btn_create_afin.setFont(font)
         self.btn_create_afin.setToolTip("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("ico/Icondesigner.net-Hyperion-Sidebar-Library.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("ico/Icondesigner.net-Hyperion-Sidebar-Library.ico"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_create_afin.setIcon(icon2)
         self.btn_create_afin.setIconSize(QtCore.QSize(32, 32))
         self.btn_create_afin.setAutoDefault(False)
@@ -344,7 +348,8 @@ class Ui_MainWindow(object):
         self.btn_create_shit.setFont(font)
         self.btn_create_shit.setToolTip("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("ico/Paomedia-Small-N-Flat-Shield.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("ico/Paomedia-Small-N-Flat-Shield.ico"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_create_shit.setIcon(icon3)
         self.btn_create_shit.setIconSize(QtCore.QSize(32, 32))
         self.btn_create_shit.setAutoDefault(False)
@@ -379,7 +384,8 @@ class Ui_MainWindow(object):
         self.btn_create_paz.setFont(font)
         self.btn_create_paz.setToolTip("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("ico/Iconsmind-Outline-Column.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("ico/Iconsmind-Outline-Column.ico"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_create_paz.setIcon(icon4)
         self.btn_create_paz.setIconSize(QtCore.QSize(32, 32))
         self.btn_create_paz.setAutoDefault(False)
@@ -425,7 +431,8 @@ class Ui_MainWindow(object):
         self.btn_create_pazpr.setFont(font)
         self.btn_create_pazpr.setToolTip("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("ico/Icons8-Ios7-Editing-Line-Width.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("ico/Icons8-Ios7-Editing-Line-Width.ico"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_create_pazpr.setIcon(icon5)
         self.btn_create_pazpr.setIconSize(QtCore.QSize(32, 32))
         self.btn_create_pazpr.setAutoDefault(False)
@@ -518,7 +525,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.groupBox_3 = QtWidgets.QGroupBox(self.layoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
@@ -650,7 +658,8 @@ class Ui_MainWindow(object):
         self.label_17.setObjectName("label_17")
         self.horizontalLayout.addWidget(self.groupBox_5)
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("ico/Icons8-Windows-8-Science-Geometry.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap("ico/Icons8-Windows-8-Science-Geometry.ico"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab_prop, icon6, "")
         self.tab_setting = QtWidgets.QWidget()
         self.tab_setting.setObjectName("tab_setting")
@@ -1047,7 +1056,8 @@ class Ui_MainWindow(object):
         self.checkBox_setting_cleancomments.setChecked(True)
         self.checkBox_setting_cleancomments.setObjectName("checkBox_setting_cleancomments")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("ico/application_x_desktop.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon7.addPixmap(QtGui.QPixmap("ico/application_x_desktop.ico"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.toolBox_setting.addItem(self.page_main_settings, icon7, "")
         self.frame = QtWidgets.QFrame(self.tab_setting)
         self.frame.setGeometry(QtCore.QRect(0, 60, 731, 431))
@@ -1058,7 +1068,8 @@ class Ui_MainWindow(object):
         self.btn_save_setting = QtWidgets.QPushButton(self.tab_setting)
         self.btn_save_setting.setGeometry(QtCore.QRect(510, 10, 201, 41))
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("ico/Hopstarter-Rounded-Square-Button-Ok.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon8.addPixmap(QtGui.QPixmap("ico/Hopstarter-Rounded-Square-Button-Ok.ico"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_save_setting.setIcon(icon8)
         self.btn_save_setting.setIconSize(QtCore.QSize(25, 25))
         self.btn_save_setting.setAutoDefault(False)
@@ -1101,7 +1112,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Создатель ЧПУ программ (АртФасадЮг)"))
+        MainWindow.setWindowTitle(_translate(
+            "MainWindow", "Создатель ЧПУ программ (АртФасадЮг) - v." + vers()))
         self.label.setText(_translate("MainWindow", "филёнки"))
         self.label_2.setText(_translate("MainWindow", "ВИКТОРИЯ"))
         self.groupBox_ots_vik.setTitle(_translate("MainWindow", "Отступ"))
@@ -1119,7 +1131,8 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "X"))
         item = self.tableWidget_vik.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Y"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_vik), _translate("MainWindow", "Виктория (ф)"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_vik),
+                                  _translate("MainWindow", "Виктория (ф)"))
         self.label_3.setText(_translate("MainWindow", "АФИНЫ"))
         self.label_4.setText(_translate("MainWindow", "филёнки"))
         self.groupBox_ots_afin.setTitle(_translate("MainWindow", "Отступ"))
@@ -1140,7 +1153,8 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "X"))
         item = self.tableWidget_afin.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Y"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_afin), _translate("MainWindow", "Афины (ф)"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_afin),
+                                  _translate("MainWindow", "Афины (ф)"))
         self.label_shit.setText(_translate("MainWindow", "Щиты"))
         item = self.tableWidget_shit.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "X"))
@@ -1150,22 +1164,26 @@ class Ui_MainWindow(object):
         self.label_ots_shit_X.setText(_translate("MainWindow", "X"))
         self.label_ots_shit_Y.setText(_translate("MainWindow", "Y"))
         self.btn_ots_shit_42.setText(_translate("MainWindow", "Стандарт\n"
-"42"))
+                                                "42"))
         self.btn_create_shit.setText(_translate("MainWindow", "Создать программы"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_shit), _translate("MainWindow", "Щиты"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(
+            self.tab_shit), _translate("MainWindow", "Щиты"))
         self.groupBox_paz.setTitle(_translate("MainWindow", "Примечание"))
-        self.label_33.setText(_translate("MainWindow", "<html><head/><body><p>Если размер Y-ка меньше или равен</p><p>62мм, то делаются программы на</p><p>2 паза (под узкие колонны).</p><p>Во всех остальных случаях</p><p>делаются программы на 3 паза </p></body></html>"))
+        self.label_33.setText(_translate(
+            "MainWindow", "<html><head/><body><p>Если размер Y-ка меньше или равен</p><p>62мм, то делаются программы на</p><p>2 паза (под узкие колонны).</p><p>Во всех остальных случаях</p><p>делаются программы на 3 паза </p></body></html>"))
         self.btn_create_paz.setText(_translate("MainWindow", "Создать программы"))
         item = self.tableWidget_paz.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "X"))
         item = self.tableWidget_paz.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Y"))
         self.label_paz.setText(_translate("MainWindow", "Пазы (для колонн)"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_paz_kol), _translate("MainWindow", "Пазы (колонны)"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_paz_kol),
+                                  _translate("MainWindow", "Пазы (колонны)"))
         self.btn_create_pazpr.setText(_translate("MainWindow", "Создать программы"))
         self.groupBox_ots_pazpr.setTitle(_translate("MainWindow", "Отступ"))
         self.label_ots_papr_X_left.setText(_translate("MainWindow", "<-- X слева"))
-        self.btn_ots_papr_2030.setToolTip(_translate("MainWindow", "<html><head/><body><p>Идеально для колонн у которых с одной стороны колёвка, а с другой стороны просто обрезано прямо.</p></body></html>"))
+        self.btn_ots_papr_2030.setToolTip(_translate(
+            "MainWindow", "<html><head/><body><p>Идеально для колонн у которых с одной стороны колёвка, а с другой стороны просто обрезано прямо.</p></body></html>"))
         self.btn_ots_papr_2030.setText(_translate("MainWindow", "30 / 20"))
         self.label_ots_pazpr_X_right.setText(_translate("MainWindow", "X справа -->"))
         self.rBtn_pazpr_3paz.setText(_translate("MainWindow", "3 паза"))
@@ -1176,7 +1194,8 @@ class Ui_MainWindow(object):
         item = self.tableWidget_pazpr.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Y"))
         self.label_pazpr.setText(_translate("MainWindow", "Пазы (прямые)"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_paz_pr), _translate("MainWindow", "Пазы прямые"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_paz_pr),
+                                  _translate("MainWindow", "Пазы прямые"))
         self.label_9.setText(_translate("MainWindow", "Быстрый просчёт пропорций"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Исходные размеры заготовки"))
         self.label_24.setText(_translate("MainWindow", "Z"))
@@ -1198,13 +1217,15 @@ class Ui_MainWindow(object):
         self.label_15.setText(_translate("MainWindow", "Y"))
         self.label_16.setText(_translate("MainWindow", "Z"))
         self.label_17.setText(_translate("MainWindow", "x"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_prop), _translate("MainWindow", "Пропорции"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_prop),
+                                  _translate("MainWindow", "Пропорции"))
         self.groupBox_7.setTitle(_translate("MainWindow", "Шаблон для создания программ Щитов"))
         self.lineEdit_shield_template.setText(_translate("MainWindow", "shitok-chis"))
         self.toolButton_select_shield_template.setText(_translate("MainWindow", "..."))
         self.groupBox_8.setTitle(_translate("MainWindow", "Префикс для названий программ Щитов"))
         self.lineEdit_shield_prefix.setText(_translate("MainWindow", "sh"))
-        self.toolBox_setting.setItemText(self.toolBox_setting.indexOf(self.page_shields), _translate("MainWindow", "Настройки для вкладки Щиты"))
+        self.toolBox_setting.setItemText(self.toolBox_setting.indexOf(
+            self.page_shields), _translate("MainWindow", "Настройки для вкладки Щиты"))
         self.groupBox_9.setTitle(_translate("MainWindow", "Под 2 полосы"))
         self.lineEdit_paz2_template.setText(_translate("MainWindow", "paz2c"))
         self.toolButton_select_paz2_template.setText(_translate("MainWindow", "..."))
@@ -1217,7 +1238,8 @@ class Ui_MainWindow(object):
         self.lineEdit_paz3_prefix.setText(_translate("MainWindow", "3p"))
         self.label_19.setText(_translate("MainWindow", "Название шаблона"))
         self.label_20.setText(_translate("MainWindow", "Префикс"))
-        self.toolBox_setting.setItemText(self.toolBox_setting.indexOf(self.page_paz), _translate("MainWindow", "Настройки для вкладки Пазы (колонны)"))
+        self.toolBox_setting.setItemText(self.toolBox_setting.indexOf(
+            self.page_paz), _translate("MainWindow", "Настройки для вкладки Пазы (колонны)"))
         self.groupBox_11.setTitle(_translate("MainWindow", "Под 2 полосы (прямые)"))
         self.lineEdit_pazpr2_template.setText(_translate("MainWindow", "paz2s"))
         self.toolButton_select_pazpr2_template.setText(_translate("MainWindow", "..."))
@@ -1236,21 +1258,31 @@ class Ui_MainWindow(object):
         self.lineEdit_pazpr5_prefix.setText(_translate("MainWindow", "5s"))
         self.label_31.setText(_translate("MainWindow", "Название шаблона"))
         self.label_32.setText(_translate("MainWindow", "Префикс"))
-        self.toolBox_setting.setItemText(self.toolBox_setting.indexOf(self.page_pazpr), _translate("MainWindow", "Настройки для вкладки Пазы прямые"))
-        self.groupBox_2.setTitle(_translate("MainWindow", "Выходная КОРНЕВАЯ папка с готовыми программами"))
-        self.toolButton_select_mainfolder.setToolTip(_translate("MainWindow", "Этой кнопкой можно выбрать необходимую папку"))
+        self.toolBox_setting.setItemText(self.toolBox_setting.indexOf(
+            self.page_pazpr), _translate("MainWindow", "Настройки для вкладки Пазы прямые"))
+        self.groupBox_2.setTitle(_translate(
+            "MainWindow", "Выходная КОРНЕВАЯ папка с готовыми программами"))
+        self.toolButton_select_mainfolder.setToolTip(_translate(
+            "MainWindow", "Этой кнопкой можно выбрать необходимую папку"))
         self.toolButton_select_mainfolder.setText(_translate("MainWindow", "..."))
-        self.label_7.setText(_translate("MainWindow", "      Папка, в которой находятся другие подпапки (типа \'на 41 Виктория\' или \'на 43 Афина\') и уже в этих подпапках"))
+        self.label_7.setText(_translate(
+            "MainWindow", "      Папка, в которой находятся другие подпапки (типа \'на 41 Виктория\' или \'на 43 Афина\') и уже в этих подпапках"))
         self.label_8.setText(_translate("MainWindow", "будут лежать готовые программы."))
-        self.groupBox.setTitle(_translate("MainWindow", "Папка с шаблонами (для выбора впишите в поле путь к папке или нажмите кнопку выбора)"))
-        self.toolButton_select_templatefolder.setToolTip(_translate("MainWindow", "Этой кнопкой можно выбрать необходимую папку"))
+        self.groupBox.setTitle(_translate(
+            "MainWindow", "Папка с шаблонами (для выбора впишите в поле путь к папке или нажмите кнопку выбора)"))
+        self.toolButton_select_templatefolder.setToolTip(_translate(
+            "MainWindow", "Этой кнопкой можно выбрать необходимую папку"))
         self.toolButton_select_templatefolder.setText(_translate("MainWindow", "..."))
-        self.label_6.setText(_translate("MainWindow", "Это папка, где лежат файлы шаблонов с расширением shb."))
-        self.checkBox_setting_cleancomments.setText(_translate("MainWindow", "Очищать готовые программы от комментариев в скобках, если такие комментарии есть в шаблонах"))
-        self.toolBox_setting.setItemText(self.toolBox_setting.indexOf(self.page_main_settings), _translate("MainWindow", "Гланые Настройки"))
-        self.btn_save_setting.setToolTip(_translate("MainWindow", "Обязательно нажимайте эту кнопку после внесения изменений в настройки"))
+        self.label_6.setText(_translate(
+            "MainWindow", "Это папка, где лежат файлы шаблонов с расширением shb."))
+        self.checkBox_setting_cleancomments.setText(_translate(
+            "MainWindow", "Очищать готовые программы от комментариев в скобках, если такие комментарии есть в шаблонах"))
+        self.toolBox_setting.setItemText(self.toolBox_setting.indexOf(
+            self.page_main_settings), _translate("MainWindow", "Гланые Настройки"))
+        self.btn_save_setting.setToolTip(_translate(
+            "MainWindow", "Обязательно нажимайте эту кнопку после внесения изменений в настройки"))
         self.btn_save_setting.setText(_translate("MainWindow", "Сохранить изменения"))
         self.label_34.setText(_translate("MainWindow", "v."))
         self.label_version.setText(_translate("MainWindow", "TextLabel"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_setting), _translate("MainWindow", "Настройки"))
-
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_setting),
+                                  _translate("MainWindow", "Настройки"))

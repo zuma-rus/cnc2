@@ -10,11 +10,14 @@ from PyQt5.QtWidgets import QFileDialog, QTableWidgetItem
 # интерфейсные файлы
 from my_tables import My_tables
 from messages import Mess
+# файлы-модули для работы с шаблонами
 from vik import Vik
 from afin import Afin
 from shield import Shield
 from paz import Paz
 from pazpr import PazPr
+# другие подключения
+from version import get_version_app as vers
 
 
 # Основной класс для работы с интерфейсом
@@ -439,7 +442,7 @@ def saveSession(ui):
 
 # секция для main файла
 if __name__ == "__main__":
-    versionApp = "2.1.1"
+    versionApp = vers()
     conf = configparser.RawConfigParser()
     conf.read("settings.ini")
     work = configparser.RawConfigParser()
