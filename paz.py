@@ -32,20 +32,28 @@ class Paz(Template):
     def create_2p_syn(self, x, y):
         self.subfolder = 'пазы 2п\\'
         self.file_extension_prog = 'nc'
-        self.name = self.name_template2
-        self.prfx = self.prfx2
+        self.mask_name_prog = '[prfx][nul][X]x[Y].[ext]'
+        self.name = "paz2p_syn.shb"
+        self.prfx = "2p_syn_"
 
         kolevka = 8
         diametrFrezi = 9
-        meja = round((y - kolevka * 2 - diametrFrezi * 2) / 3, 1)  # с округлением до 1 десятой
+        meja = round((x - kolevka * 2 - diametrFrezi * 2) / 3, 1)  # с округлением до 1 десятой
 
         k = {}
 
-        k['[y2]'] = kolevka + meja + diametrFrezi / 2
-        k['[y1]'] = y - k['[y2]']
+        x2 = kolevka + meja + diametrFrezi / 2
+        x1 = x - x2
 
-        k['[x1]'] = y + 15
-        k['[x1e]'] = x - k['[x1]']
+        y1 = x + 15
+        y1e = y - y1
+
+        k['[x1]'] = "{0:.3f}".format(x1)
+        k['[x2]'] = "{0:.3f}".format(x2)
+        k['[y1]'] = "{0:.3f}".format(y1)
+        k['[y1e]'] = "{0:.3f}".format(y1e)
+
+        k['[mess]'] = "2 paza pod rozetku " + str(x) + "x" + str(y)
 
         body = self.readTemplate(self.name)
         body = self.fillingTemplate(body, k)
@@ -87,6 +95,8 @@ class Paz(Template):
         k['[y2]'] = "{0:.3f}".format(y2)
         k['[y2e]'] = "{0:.3f}".format(y2e)
         k['[srX]'] = "{0:.3f}".format(seredX)
+
+        k['[mess]'] = "3 paza pod rozetku " + str(x) + "x" + str(y)
 
         body = self.readTemplate(self.name)
         body = self.fillingTemplate(body, k)

@@ -15,17 +15,25 @@ class PazPr(Template):
 
     # программа, выбора
     def createProgram(self, x, y):
-        if self.pazov == 5:
-            body, x, y = self.create5p(x, y)
-        elif self.pazov == 3:
-            body, x, y = self.create3p(x, y)
+        if y > 500:
+            if self.pazov == 5:
+                body, x, y = self.create_5p(x, y)
+            elif self.pazov == 3:
+                body, x, y = self.create_3p_syn(x, y)
+            else:
+                body, x, y = self.create_2p(x, y)
         else:
-            body, x, y = self.create2p(x, y)
+            if self.pazov == 5:
+                body, x, y = self.create_5p(x, y)
+            elif self.pazov == 3:
+                body, x, y = self.create_3p(x, y)
+            else:
+                body, x, y = self.create_2p(x, y)
 
         return body, x, y
 
     # функция рассчёта и создания программы 2 пазов
-    def create2p(self, x, y):
+    def create_2p(self, x, y):
         self.subfolder = 'пазы прямые 2п\\'
         k = {}
 
@@ -45,7 +53,7 @@ class PazPr(Template):
         return body, x, y
 
     # функция рассчёта и создания программы 3 пазов
-    def create3p(self, x, y):
+    def create_3p(self, x, y):
         self.subfolder = 'пазы прямые 3п\\'
         k = {}
 
@@ -70,8 +78,41 @@ class PazPr(Template):
 
         return body, x, y
 
+    # функция рассчёта и создания программы 3 прямых пазов для Синтека
+    def create_3p_syn(self, x, y):
+        self.subfolder = 'пазы прямые 3п\\'
+        self.file_extension_prog = 'nc'
+        self.mask_name_prog = '[prfx][nul][X]x[Y].[ext]'
+        self.name = "paz3s_syn.shb"
+        self.prfx = "3s_prm_syn_"
+
+        k = {}
+
+        seredX = x / 2
+
+        kolevka = 8
+        diametrFrezi = 9
+        meja = round((x - kolevka * 2 - diametrFrezi * 3) / 4, 1) - 1
+        # с округлением до 1 десятой : пример ' (75 - 16 - 9*3) / 4 - 1 = 7
+
+        mejdu = diametrFrezi + meja
+
+        k['[x1]'] = "{0:.3f}".format(seredX - mejdu)
+        k['[x2]'] = "{0:.3f}".format(seredX + mejdu)
+
+        k['[y1]'] = "{0:.3f}".format(self.ot_left)
+        k['[y1e]'] = "{0:.3f}".format(y - self.ot_right)
+        k['[srX]'] = "{0:.3f}".format(seredX)
+
+        k['[mess]'] = "3 pryamih paza " + str(x) + "x" + str(y)
+
+        body = self.readTemplate(self.name)
+        body = self.fillingTemplate(body, k)
+
+        return body, x, y
+
     # функция рассчёта и создания программы 5 пазов
-    def create5p(self, x, y):
+    def create_5p(self, x, y):
         self.subfolder = 'пазы прямые 5п\\'
         k = {}
 

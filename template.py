@@ -89,15 +89,21 @@ class Template(object):
             txt, n = re.subn(r'  ', ' ', txt)
         return txt
 
+    # удаление пустых строк (пока не работает)
+    def remove_empty_string(self, txt):
+        return txt.replace('\n\n','\n').replace('\n\n','\n')
+
     # создание всех программ по переданному списку
-    def createProgs(self, list_table):
+    def createProgs(self, list_table, clean_messages):
         for xy in list_table:
             x = xy[0]
             y = xy[1]
             body, x, y = self.createProgram(x, y)
             body = self.onlyPoint(body)
-            body = self.removeBrackets(body)
+            if (clean_messages):
+                body = self.removeBrackets(body)
             body = self.removeDoubleSpace(body)
+            body = self.remove_empty_string(body) # пока не работает, нужно копать
             name_prog = self.createNameProg(x, y)
             self.saveProgram(name_prog, body)
 

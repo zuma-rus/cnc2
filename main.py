@@ -119,6 +119,13 @@ class MyWin(QtWidgets.QMainWindow):
         # очистка всех таблиц
         self.tb.cleanAll()
 
+        # для тестов
+        # if self.ui.checkBox_setting_cleancomments.isChecked():
+        #     test_message = "Включено"
+        # else:
+        #     test_message = "ВЫКЛючено"
+        # print(test_message)
+
     # запуск создания программ Виктории
     def createVictories(self):
         self.tb.sorting('vik')
@@ -127,7 +134,7 @@ class MyWin(QtWidgets.QMainWindow):
         ot_y = self.ui.spinBox_ots_vik_Y.value()
         list = self.tb.getTable('vik')
         vik = Vik(name, self.tf, self.mf, ot_x, ot_y)
-        vik.createProgs(list)
+        vik.createProgs(list, self.ui.checkBox_setting_cleancomments.isChecked())
         self.statusBar().showMessage('Программы филёнок Виктории созданы!')
         mes = Mess()
         mes.MesProgComplete('Программы готовы', 'Программы филёнок Виктории созданы!')
@@ -141,7 +148,7 @@ class MyWin(QtWidgets.QMainWindow):
         list = self.tb.getTable('afin')
         pr = self.ui.rBtn_afin_pr.isChecked()
         afin = Afin(name, self.tf, self.mf, ot_x, ot_y, pr)
-        afin.createProgs(list)
+        afin.createProgs(list, self.ui.checkBox_setting_cleancomments.isChecked())
         self.statusBar().showMessage('Программы филёнок Афин созданы!')
         mes = Mess()
         mes.MesProgComplete('Программы готовы', 'Программы филёнок Афин созданы!')
@@ -155,7 +162,7 @@ class MyWin(QtWidgets.QMainWindow):
         ot_y = self.ui.spinBox_ots_shit_Y.value()
         list = self.tb.getTable('shit')
         shit = Shield(name, self.tf, self.mf, ot_x, ot_y, prfx)
-        shit.createProgs(list)
+        shit.createProgs(list, self.ui.checkBox_setting_cleancomments.isChecked())
         self.statusBar().showMessage('Программы Щитов созданы!')
         mes = Mess()
         mes.MesProgComplete('Программы готовы', 'Программы Щитов созданы!')
@@ -169,7 +176,7 @@ class MyWin(QtWidgets.QMainWindow):
         prfx3 = self.ui.lineEdit_paz3_prefix.text()
         list = self.tb.getTable('paz')
         paz = Paz(name2, name3, self.tf, self.mf, prfx2, prfx3)
-        paz.createProgs(list)
+        paz.createProgs(list, self.ui.checkBox_setting_cleancomments.isChecked())
         self.statusBar().showMessage('Программы Пазов созданы!')
         mes = Mess()
         mes.MesProgComplete('Программы готовы', 'Программы Пазов созданы!')
@@ -195,7 +202,7 @@ class MyWin(QtWidgets.QMainWindow):
         else:
             pazpr = PazPr(name5, self.tf, self.mf, prfx5, ot_left, ot_right, 5)
 
-        pazpr.createProgs(list)
+        pazpr.createProgs(list, self.ui.checkBox_setting_cleancomments.isChecked())
         self.statusBar().showMessage('Программы Прямых Пазов созданы!')
         mes = Mess()
         mes.MesProgComplete('Программы готовы', 'Программы Прямых Пазов созданы!')
